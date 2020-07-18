@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block body %}
+<header class="card-header text-center">
+    <h1>Youtube Music Download</h1>
+</header>
+<div class="container text-center">
+    <div class="container-fluid">
+        <br>
+        <form action="/" method="post">
+            <div class="form-group">
+                <label for="yt_url">請輸入網址:</label><br>
+                <input type="text" name="yt_url">
+            </div>
+            <button type="submit" class="btn btn-primary">送出</button>
+        </form>
+        <hr>
+        <br>
+        {% if data_title %}
+        <p>{{data_title}}</p>
+        <iframe class="embed-responsive-item" src="{{filepath}}" width="320" height="200"></iframe>
+        {% endif %}
+    </div>
+</div>
+
+<footer class="card-footer text-muted text-center fixed-bottom">
+    create by Kevin
+</footer>
+
+{% endblock %}
